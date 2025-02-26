@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGURKAS TV - Kawaii Login</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff9ff3;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            transform: scale(1.05);
+        }
+
+        button {
+            background: #ff6b81;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff4757;
+        }
+
+        .toggle {
+            color: #feca57;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .bounce {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="authContainer">
+    <h1 class="bounce">🥒 AGURKAS TV 🥒</h1>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Prisijungimas</h2>
+        <input type="text" id="loginUser" placeholder="Vartotojo vardas" required>
+        <input type="password" id="loginPass" placeholder="Slaptažodis" required>
+        <button onclick="login()">Prisijungti</button>
+        <p>Neturi paskyros? <span class="toggle" onclick="toggleForm()">Registruokis!</span></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerForm" class="hidden">
+        <h2>Registracija</h2>
+        <input type="text" id="regUser" placeholder="Vartotojo vardas" required>
+        <input type="password" id="regPass" placeholder="Slaptažodis" required>
+        <button onclick="register()">Registruotis</button>
+        <p>Jau turi paskyrą? <span class="toggle" onclick="toggleForm()">Prisijunk!</span></p>
+    </div>
+</div>
+
+<script>
+    // Switch between login and register
+    function toggleForm() {
+        document.getElementById("loginForm").classList.toggle("hidden");
+        document.getElementById("registerForm").classList.toggle("hidden");
+    }
+
+    // Save credentials and register
+    function register() {
+        const user = document.getElementById("regUser").value;
+        const pass = document.getElementById("regPass").value;
+        if (user && pass) {
+            localStorage.setItem(user, pass);
+            alert("Registracija sėkminga! Dabar galite prisijungti.");
+            toggleForm();
+        } else {
+            alert("Įveskite visus duomenis!");
+        }
+    }
+
+    // Login and verify from localStorage
+    function login() {
+        const user = document.getElementById("loginUser").value;
+        const pass = document.getElementById("loginPass").value;
+        const storedPass = localStorage.getItem(user);
+
+        if (storedPass && storedPass === pass) {
+            alert("Prisijungta sėkmingai! Sveiki, " + user + "!");
+            window.location.href = "https://your-link-here.com"; // Redirect to your desired link
+        } else {
+            alert("Neteisingas vartotojo vardas arba slaptažodis.");
+        }
+    }
+</script>
+
+</body>
+</html>
