@@ -20,16 +20,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 350px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.5s ease;
-}
 
 h1 {
     font-size: 3rem;
@@ -46,7 +36,14 @@ p {
 .main-container {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 350px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease;
 }
 
 .video-container {
@@ -101,7 +98,6 @@ iframe {
     <p>Tai yra RADIO pilnas geru daineliu</p>
 </header>
 
-<div class="container">
     <!-- Main container -->
     <div class="main-container">
         <!-- Video container -->
@@ -133,7 +129,6 @@ iframe {
             <a href="#" onclick="playVideo('https://www.youtube.com/embed/H9vJYZZShWg')">HIPERBOLE - Lauzai</a>
         </div>
     </div>
-</div>
 
 <script>
     function getYouTubeVideoId(url) {
