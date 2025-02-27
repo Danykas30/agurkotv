@@ -32,7 +32,7 @@
             color: #00ff00; /* Green text */
         }
 
-        .main-container {
+.main-container {
     display: flex;
     justify-content: space-between;
     padding: 30px;
@@ -66,7 +66,8 @@ iframe {
 
 .grojarastis {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     padding: 30px;
 }
         .grojarastis a {
@@ -89,11 +90,13 @@ iframe {
 </header>
 
 <!-- Video container -->
-<div class="video-container" id="videoContainer">
-    <div class="video-frame">
-        <iframe id="videoIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-</div>
+<div class="main-container">
+    <!-- Video container -->
+    <div class="video-container" id="videoContainer">
+        <div class="video-frame">
+            <iframe id="videoIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div
 
 <!-- Grojaraštis (playlist) -->
 <div class="grojarastis">
