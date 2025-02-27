@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGURKAS TV</title>
     <style>
-        body {
+       body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -18,8 +18,9 @@ header {
     padding: 20px;
     background-color: #333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
 }
-
 
 h1 {
     font-size: 3rem;
@@ -44,6 +45,7 @@ p {
     width: 350px;
     backdrop-filter: blur(10px);
     transition: transform 0.5s ease;
+    position: relative;
 }
 
 .video-container {
@@ -98,37 +100,37 @@ iframe {
     <p>Tai yra RADIO pilnas geru daineliu</p>
 </header>
 
-    <!-- Main container -->
-    <div class="main-container">
-        <!-- Video container -->
-        <div class="video-container" id="videoContainer">
-            <div class="video-frame">
-                <iframe id="videoIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <!-- Grojaraštis (playlist) -->
-        <div class="grojarastis">
-            <h2>Grojaraštis - Visos Dainos</h2>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/H3axP4norfk')">50 Cent - In Da Club</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/AYZIIATwgks')">50 Cent - Candy Shop</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/oCaM5dTIlag')">50 Cent - P.I.M.P.</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/ktO0ZcMyHfk')">50 Cent - 21 Questions</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/-lR1VfG8bPA')">HIPERBOLE - Laužai</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/R_8Dg7y7sFQ')">Andrius Mamontovas - Lietuva</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/bjX_mhRYZdg')">Antis - Šuo</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/I3Vh1v-2gw4')">G&G Sindikatas - Viskas Gerai</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/-zj_UF1-Yb0')">Donny Montell - Žiūrėk, kaip aš gyvenu</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/GS5tt7Mzr7M')">Maironio - Tėvynė</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/vsHRFe5vsgY')">Gytis Ivanauskas - Tu Man Patinki</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/MTv40gz7hsw')">Beissoul & Einius - Let It Go</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/ZIaXbZtM-wY')">Sel - Tykiai</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/Ryy3ZaXQAFQ')">Jurga - 5 Minutos</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/a7IOTb1rhVw')">Gintarė - Mėnulis</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/rLBBQPTs14k')">Matisse - Paskutiniai Žodžiai</a>
-            <a href="#" onclick="playVideo('https://www.youtube.com/embed/H9vJYZZShWg')">HIPERBOLE - Lauzai</a>
+<!-- Main container -->
+<div class="main-container">
+    <!-- Video container -->
+    <div class="video-container" id="videoContainer">
+        <div class="video-frame">
+            <iframe id="videoIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
+
+    <!-- Grojaraštis (playlist) -->
+    <div class="grojarastis">
+        <h2>Grojaraštis - Visos Dainos</h2>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/H3axP4norfk')">50 Cent - In Da Club</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/AYZIIATwgks')">50 Cent - Candy Shop</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/oCaM5dTIlag')">50 Cent - P.I.M.P.</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/ktO0ZcMyHfk')">50 Cent - 21 Questions</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/-lR1VfG8bPA')">HIPERBOLE - Laužai</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/R_8Dg7y7sFQ')">Andrius Mamontovas - Lietuva</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/bjX_mhRYZdg')">Antis - Šuo</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/I3Vh1v-2gw4')">G&G Sindikatas - Viskas Gerai</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/-zj_UF1-Yb0')">Donny Montell - Žiūrėk, kaip aš gyvenu</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/GS5tt7Mzr7M')">Maironio - Tėvynė</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/vsHRFe5vsgY')">Gytis Ivanauskas - Tu Man Patinki</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/MTv40gz7hsw')">Beissoul & Einius - Let It Go</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/ZIaXbZtM-wY')">Sel - Tykiai</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/Ryy3ZaXQAFQ')">Jurga - 5 Minutos</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/a7IOTb1rhVw')">Gintarė - Mėnulis</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/rLBBQPTs14k')">Matisse - Paskutiniai Žodžiai</a>
+        <a href="#" onclick="playVideo('https://www.youtube.com/embed/H9vJYZZShWg')">HIPERBOLE - Lauzai</a>
+    </div>
+</div>
 
 <script>
     function getYouTubeVideoId(url) {
