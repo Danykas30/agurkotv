@@ -68,6 +68,16 @@
             display: none;
         }
 
+        .volume-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-label {
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +91,12 @@
         <button class="btn" id="playBtn" onclick="playZIP()">🎵 Paleisti ZIP FM</button>
         <button class="btn hidden" id="stopBtn" onclick="stopZIP()">⏹️ Sustabdyti ZIP FM</button>
         <audio id="zipRadio" src="https://stream1.zipfm.lt/zipfm128.mp3" controls hidden></audio>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <label class="volume-label" for="volume">🔊 Garsas:</label>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1" onchange="setVolume()">
+        </div>
     </div>
 </div>
 
@@ -90,26 +106,37 @@
 </div>
 
 <script>
-    function playZIP() {
-        const zipRadio = document.getElementById('zipRadio');
-        const playBtn = document.getElementById('playBtn');
-        const stopBtn = document.getElementById('stopBtn');
+    const zipRadio = document.getElementById('zipRadio');
+    const playBtn = document.getElementById('playBtn');
+    const stopBtn = document.getElementById('stopBtn');
 
+    function playZIP() {
         zipRadio.play();
         playBtn.classList.add('hidden');
         stopBtn.classList.remove('hidden');
     }
 
     function stopZIP() {
-        const zipRadio = document.getElementById('zipRadio');
-        const playBtn = document.getElementById('playBtn');
-        const stopBtn = document.getElementById('stopBtn');
-
         zipRadio.pause();
         zipRadio.currentTime = 0;
         playBtn.classList.remove('hidden');
         stopBtn.classList.add('hidden');
     }
+
+    function setVolume() {
+        zipRadio.volume = document.getElementById('volume').value;
+    }
+
+    // Automatically update play/stop button visibility
+    zipRadio.addEventListener('play', () => {
+        playBtn.classList.add('hidden');
+        stopBtn.classList.remove('hidden');
+    });
+
+    zipRadio.addEventListener('pause', () => {
+        playBtn.classList.remove('hidden');
+        stopBtn.classList.add('hidden');
+    });
 </script>
 
 </body>
