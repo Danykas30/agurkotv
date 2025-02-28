@@ -1,146 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGURKAS TV</title>
+    <title>Agurkas Radio - Klausykis Gyvai</title>
     <style>
-       body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://lh5.googleusercontent.com/proxy/hjwn-Lwap54kIkUlROvXgZDVeM2R3de7DZIIg-XRymOScg-fY3fsURgbBrjit7RARnbYwtXJ3sJCrxvN_ZpUj8jFRjoPMefXEjYKHrhyHt8=w3840-h2160') no-repeat center center/cover;
-    color: #fff;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    position: relative;
-    z-index: 10;
-}
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: #00ff00; /* Green text */
-}
+        .radio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
 
-p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #00ff00; /* Green text */
-}
+        .radio-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
 
-.main-container {
-    display: flex;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 350px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.5s ease;
-    position: relative;
-}
+        .radio-card:hover {
+            transform: scale(1.1);
+        }
 
-.video-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        .btn {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-.video-frame {
-    width: 560px; /* Smaller video width */
-    height: 315px; /* Smaller video height */
-    border: 4px solid #ffcc00;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .btn:hover {
+            transform: scale(1.1);
+        }
 
-.video-frame:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
-}
+        .footer {
+            margin-top: 50px;
+            font-size: 1rem;
+        }
 
-iframe {
-    width: 100%;
-    height: 100%;
-}
+        .hidden {
+            display: none;
+        }
 
-.grojarastis {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px;
-}
-
-.grojarastis a {
-    color: #00ff00;
-    text-decoration: none;
-    margin: 5px 0;
-    font-size: 1.2rem;
-}
-
-.grojarastis a:hover {
-    text-decoration: underline;
-}
     </style>
 </head>
 <body>
 
-<header>
-    <h1>AGURKAS TV</h1>
-    <p>Tai yra RADIO pilnas geru daineliu</p>
-</header>
+<h1>🥒 Agurkas Radio - Klausykis Gyvai 📻</h1>
 
-<!-- Main container -->
-<div class="main-container">
-    <!-- Video container -->
-    <div class="video-container" id="videoContainer">
-        <div class="video-frame">
-            <iframe id="videoIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Grojaraštis (playlist) -->
-    <div class="grojarastis">
-        <h2>Grojaraštis - Visos Dainos</h2>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/H3axP4norfk')">50 Cent - In Da Club</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/AYZIIATwgks')">50 Cent - Candy Shop</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/oCaM5dTIlag')">50 Cent - P.I.M.P.</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/ktO0ZcMyHfk')">50 Cent - 21 Questions</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/-lR1VfG8bPA')">HIPERBOLE - Laužai</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/R_8Dg7y7sFQ')">Andrius Mamontovas - Lietuva</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/bjX_mhRYZdg')">Antis - Šuo</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/I3Vh1v-2gw4')">G&G Sindikatas - Viskas Gerai</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/-zj_UF1-Yb0')">Donny Montell - Žiūrėk, kaip aš gyvenu</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/GS5tt7Mzr7M')">Maironio - Tėvynė</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/vsHRFe5vsgY')">Gytis Ivanauskas - Tu Man Patinki</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/MTv40gz7hsw')">Beissoul & Einius - Let It Go</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/ZIaXbZtM-wY')">Sel - Tykiai</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/Ryy3ZaXQAFQ')">Jurga - 5 Minutos</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/a7IOTb1rhVw')">Gintarė - Mėnulis</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/rLBBQPTs14k')">Matisse - Paskutiniai Žodžiai</a>
-        <a href="#" onclick="playVideo('https://www.youtube.com/embed/H9vJYZZShWg')">HIPERBOLE - Lauzai</a>
+<div class="radio-container">
+    <!-- ZIP FM Radio -->
+    <div class="radio-card">
+        <h2>ZIP FM - Gyvai</h2>
+        <button class="btn" id="playBtn" onclick="playZIP()">🎵 Paleisti ZIP FM</button>
+        <button class="btn hidden" id="stopBtn" onclick="stopZIP()">⏹️ Sustabdyti ZIP FM</button>
+        <audio id="zipRadio" src="https://stream1.zipfm.lt/zipfm128.mp3" controls hidden></audio>
     </div>
 </div>
 
+<div class="footer">
+    <p>ℹ️ <strong>Apie mus:</strong> Agurkas Radio - geriausios dainos iš Lietuvos ir viso pasaulio! </p>
+    <p>© 2025 Agurkas Radio. Visos teisės saugomos.</p>
+</div>
+
 <script>
-    function getYouTubeVideoId(url) {
-        const videoId = url.split('v=')[1];
-        return videoId;
+    function playZIP() {
+        const zipRadio = document.getElementById('zipRadio');
+        const playBtn = document.getElementById('playBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        zipRadio.play();
+        playBtn.classList.add('hidden');
+        stopBtn.classList.remove('hidden');
     }
 
-    function playVideo(url) {
-        const videoIframe = document.getElementById("videoIframe");
-        videoIframe.src = url + "?autoplay=1";
+    function stopZIP() {
+        const zipRadio = document.getElementById('zipRadio');
+        const playBtn = document.getElementById('playBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        zipRadio.pause();
+        zipRadio.currentTime = 0;
+        playBtn.classList.remove('hidden');
+        stopBtn.classList.add('hidden');
     }
 </script>
 
