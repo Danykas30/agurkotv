@@ -115,26 +115,41 @@
         document.getElementById("registerForm").classList.toggle("hidden");
     }
 
-    // Save credentials and register
-    function register() {
+    // Register user
+    async function register() {
         const user = document.getElementById("regUser").value;
         const pass = document.getElementById("regPass").value;
         if (user && pass) {
-            localStorage.setItem(user, pass);
-            alert("Registracija sėkminga! Dabar galite prisijungti.");
-            toggleForm();
+            const response = await fetch('/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: user, password: pass })
+            });
+            if (response.ok) {
+                alert("Registracija sėkminga! Dabar galite prisijungti.");
+                toggleForm();
+            } else {
+                alert("Registracija nepavyko.");
+            }
         } else {
             alert("Įveskite visus duomenis!");
         }
     }
 
-    // Login and verify from localStorage
-    function login() {
+    // Login user
+    async function login() {
         const user = document.getElementById("loginUser").value;
         const pass = document.getElementById("loginPass").value;
-        const storedPass = localStorage.getItem(user);
-
-        if (storedPass && storedPass === pass) {
+        const response = await fetch('/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: user, password: pass })
+        });
+        if (response.ok) {
             alert("Prisijungta sėkmingai! Sveiki, " + user + "!");
             window.location.href = "https://agurkotv.vercel.app/login-right1/";
         } else {
